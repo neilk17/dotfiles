@@ -51,7 +51,12 @@ vim.opt.splitright = true
 -- descrease update time
 vim.opt.updatetime = 250
 
--- better completion
--- vim.o.completeopt = 'menuone,select'
-
 vim.opt.title = true
+
+-- Set highlight on search
+vim.o.hlsearch = false
+
+vim.o.termguicolors = true
+
+-- colorscheme
+vim.cmd [[colorscheme tokyonight]]

@@ -2,12 +2,6 @@ require 'neilk17.options'
 require 'neilk17.keymaps'
 require 'neilk17.packer'
 
--- Set highlight on search
-vim.o.hlsearch = false
-
-vim.o.termguicolors = true
-vim.cmd [[colorscheme tokyonight-moon]]
-
 -- set lualine as statusline
 -- see `:help lualine.txt`
 require('lualine').setup {
@@ -48,7 +42,6 @@ require'nvim-treesitter.configs'.setup {
   }
 }
 
-
 -- Typescript comments
 require'nvim-treesitter.configs'.setup {
   context_commentstring = {
@@ -58,4 +51,3 @@ require'nvim-treesitter.configs'.setup {
 
 -- Colorizer
 require 'colorizer'.setup()
-
