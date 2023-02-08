@@ -171,6 +171,9 @@ return packer.startup(function(use)
       vim.g.matchup_matchparen_offscreen = { method = "popup" }
     end
   }
+
+  -- copilot
+  use { "github/copilot.vim" }
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
