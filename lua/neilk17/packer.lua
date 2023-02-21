@@ -77,8 +77,8 @@ return packer.startup(function(use)
 
   -- emmet
   use {
-	'mattn/emmet-vim',
-	setup = function() vim.g.user_emmet_leader_key = ','end
+    'mattn/emmet-vim',
+    setup = function() vim.g.user_emmet_leader_key = ','end
   }
 
   -- For parans
@@ -174,6 +174,16 @@ return packer.startup(function(use)
 
   -- copilot
   use { "github/copilot.vim" }
+
+  -- text highlight
+  use { "RRethy/vim-illuminate" }
+
+  -- Config
+  use { "folke/trouble.nvim" }
+
+  -- UI
+  use { "echasnovski/mini.indentscope" }
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then

@@ -21,32 +21,29 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
--- jk to exit insert mode
-keymap.set('i', 'jk', '<ESC>')
--- // to clear search highlighting
---[[ keymap.set('n', '//', ':noh<CR>') ]]
-
 -- map mac command key + s to save file
 keymap.set('n', '++', ':update<CR>')
 
+-- Clear search with <esc>
+keymap.set({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
 
--- quit buffer
-keymap.set('n', '<leader>q', ':wq<CR>')
-
-keymap.set("n", "<leader>e", ":Lex 30<CR>")
--- source file
-keymap.set('n', '<leader>vs', ':source $MYVIMRC<CR>')
 keymap.set('n', 'x', '"_x')
 -- split window
-keymap.set('n', '<leader>sv', '<C-w>v')
-keymap.set('n', '<leader>sh', '<C-w>h')
-keymap.set('n', '<leader>sx', ':close<CR>')
+keymap.set('n', '<leader>sv', '<C-w>v', { desc = "Split window vertical"})
+keymap.set('n', '<leader>sp', '<C-w>h', { desc = "Split window horizontal"})
+keymap.set('n', '<leader>sx', ':close<CR>', { desc = "Close window"})
 
--- Better Window navigation
-keymap.set('n', '<C-h>', '<C-w>h')
-keymap.set('n', '<C-j>', '<C-w>j')
-keymap.set('n', '<C-k>', '<C-w>k')
-keymap.set('n', '<C-l>', '<C-w>l')
+-- Window navigation
+keymap.set('n', '<C-h>', '<C-w>h', { desc = "Go to left window"})
+keymap.set('n', '<C-j>', '<C-w>j', { desc = "Go to lower window"})
+keymap.set('n', '<C-k>', '<C-w>k', { desc = "Go to upper window"})
+keymap.set('n', '<C-l>', '<C-w>l', { desc = "Go to right window"})
+
+-- Resize window using <ctrl> arrow keys
+keymap.set("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
+keymap.set("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
+keymap.set("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
+keymap.set("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
 -- tabs
 keymap.set('n', '<C-t>', ':tabnew<CR>')
 
@@ -60,3 +57,20 @@ keymap.set("n", "J", "mzJ`z")
 -- Paste over existing words
 keymap.set("x", "<leader>p", "\"_dP")
 
+-- https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
+keymap.set("n", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
+keymap.set("x", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
+keymap.set("o", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
+keymap.set("n", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
+keymap.set("x", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
+keymap.set("o", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
+
+-- better indenting
+keymap.set("v", "<", "<gv")
+keymap.set("v", ">", ">gv")
+
+-- new file
+keymap.set("n", "<leader>fn", "<cmd>enew<cr>", { desc = "New File" })
+
+-- quit
+keymap.set("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit all" })
