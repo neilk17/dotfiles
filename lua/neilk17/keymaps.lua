@@ -70,7 +70,7 @@ keymap.set("v", "<", "<gv")
 keymap.set("v", ">", ">gv")
 
 -- new file
-keymap.set("n", "<leader>fn", "<cmd>enew<cr>", { desc = "New File" })
+keymap.set("n", "<leader>nf", "<cmd>enew<cr>", { desc = "New File" })
 
 -- quit
 keymap.set("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit all" })

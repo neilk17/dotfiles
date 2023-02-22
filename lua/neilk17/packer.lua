@@ -178,11 +178,24 @@ return packer.startup(function(use)
   -- text highlight
   use { "RRethy/vim-illuminate" }
 
-  -- Config
-  use { "folke/trouble.nvim" }
-
   -- UI
   use { "echasnovski/mini.indentscope" }
+
+  -- Trouble nvim
+  use {
+    "folke/trouble.nvim",
+    requires = "nvim-tree/nvim-web-devicons",
+    config = function()
+      require("trouble").setup {
+	vim.keymap.set("n", "<leader>xx", "<cmd>TroubleToggle<cr>",
+	  {silent = true, noremap = true}
+	)
+	-- your configuration comes here
+	-- or leave it empty to use the default settings
+	-- refer to the configuration section below
+      }
+    end
+  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
