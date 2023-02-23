@@ -74,6 +74,7 @@ return packer.startup(function(use)
 
   -- Colorscheme
   use 'folke/tokyonight.nvim'
+  use 'ellisonleao/gruvbox.nvim'
 
   -- emmet
   use {
@@ -196,6 +197,20 @@ return packer.startup(function(use)
       }
     end
   }
+
+  -- using packer.nvim
+  use {
+    'akinsho/bufferline.nvim',
+    tag = "v3.*",
+    requires = 'nvim-tree/nvim-web-devicons'
+  }
+
+  -- Markdown preview
+  -- install without yarn or npm
+  use({
+      "iamcco/markdown-preview.nvim",
+      run = function() vim.fn["mkdp#util#install"]() end,
+  })
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
