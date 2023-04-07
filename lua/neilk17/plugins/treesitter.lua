@@ -1,7 +1,6 @@
 return {
 	{
 		"nvim-treesitter/nvim-treesitter",
-		version = false,
 		build = ":TSUpdate",
 		keys = {
 			{ "<c-space>", desc = "Increment selection" },
