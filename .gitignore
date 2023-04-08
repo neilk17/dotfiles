@@ -1,1 +1,8 @@
-plugin/*
+# Ignore all files
+*
+
+# Except
+!nvim
+!yabai
+!skhd
+!.zshrc
