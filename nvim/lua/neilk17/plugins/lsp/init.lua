@@ -26,10 +26,11 @@ return {
 
 			-- And you can configure cmp even more, if you want to.
 			local cmp = require('cmp')
-			local cmp_action = require('lsp-zero.cmp').action() 
+			local cmp_action = require('lsp-zero.cmp').action()
 
 			cmp.setup({
 				mapping = {
+                    ['<CR>'] = cmp.mapping.confirm({select = false}),
 					['<C-Space>'] = cmp.mapping.complete(),
 					['<C-f>'] = cmp_action.luasnip_jump_forward(),
 					['<C-b>'] = cmp_action.luasnip_jump_backward(),
