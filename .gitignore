@@ -3,6 +3,6 @@
 
 # Except
 !nvim
+!LazyVim
 !yabai
 !skhd
-!.zshrc
