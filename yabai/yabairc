@@ -1,11 +1,12 @@
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+
 sudo yabai --load-sa
 #
 #!/usr/bin/env sh
 #
 
 # global settings
-yabai -m config external_bar on            all:100            \
+yabai -m config external_bar on            all:49:0          \
                 window_border              on                 \
                 window_placement           second_child       \
                 top_padding                10                 \
@@ -24,6 +25,9 @@ yabai -m config external_bar on            all:100            \
 
 # center mouse on window with focus
 yabai -m config mouse_follows_focus on
+
+# Window blur
+yabai -m config window_border_blur off
 
 # modifier for clicking and dragging with mouse
 yabai -m config mouse_modifier alt

@@ -21,6 +21,8 @@ alt - x : yabai -m space --mirror x-axis
 # toggle window float
 alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
 
+alt - b : yabai -m window_border off
+
 # -- Modifying Window Size --
 
 # maximize a window
@@ -63,3 +65,11 @@ shift + alt - 6 : yabai -m window --space 6;
 ctrl + alt - q : brew services stop yabai
 ctrl + alt - s : brew services start yabai
 ctrl + alt - r : brew services restart yabai
+
+
+.blacklist [
+    "terminal"
+    "qutebrowser"
+    "kitty"
+    "google chrome"
+]

@@ -7,5 +7,6 @@
 !LazyVim/
 !yabai
 !skhd
-!sketchybar/
 !nvim/**
+!.zshrc
+~sketchybar
