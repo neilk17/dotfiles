@@ -75,8 +75,9 @@ export TERM="xterm-256color"
 # alias zshconfig="mate ~/.zshrc"
 alias lv="NVIM_APPNAME=LazyVim nvim"
 alias vn="NVIM_APPNAME=nvim-neil nvim"
+alias kv="NVIM_APPNAME=kickstart nvim"
 function nvims() {
-  items=("nvim-neil" "LazyVim")
+  items=("nvim-neil" "LazyVim" "kickstart")
   config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
   if [[ -z $config ]]; then
     echo "Nothing selected"
