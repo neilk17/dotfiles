@@ -75,7 +75,7 @@ export TERM="xterm-256color"
 # alias zshconfig="mate ~/.zshrc"
 # alias lv="NVIM_APPNAME=LazyVim nvim"
 function nvims() {
-  items=("LazyVim" "neilk17")
+  items=("LazyVim" "nvim-neil")
   config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
   if [[ -z $config ]]; then
     echo "Nothing selected"
@@ -86,8 +86,8 @@ function nvims() {
   NVIM_APPNAME=$config nvim $@
 }
 
-alias yabai="cd ~/.config/yabai/; nvim yabairc"
-alias skid="cd ~/.config/skhd/; nvim skhdrc"
+alias yabairc="nvim ~/.config/yabai/yabairc"
+alias skhdrc="nvim ~/.config/skhd/skhdrc"
 alias v="nvim"
 alias zsh="nvim ~/.zshrc"
 alias activate="source venv/bin/activate"
