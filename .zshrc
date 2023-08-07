@@ -73,9 +73,10 @@ export TERM="xterm-256color"
 #
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
-# alias lv="NVIM_APPNAME=LazyVim nvim"
+alias lv="NVIM_APPNAME=LazyVim nvim"
+alias vn="NVIM_APPNAME=nvim-neil nvim"
 function nvims() {
-  items=("LazyVim" "nvim-neil")
+  items=("nvim-neil" "LazyVim")
   config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
   if [[ -z $config ]]; then
     echo "Nothing selected"
@@ -86,6 +87,8 @@ function nvims() {
   NVIM_APPNAME=$config nvim $@
 }
 
+bindkey -s ^a "nvims\n"
+
 alias yabairc="nvim ~/.config/yabai/yabairc"
 alias skhdrc="nvim ~/.config/skhd/skhdrc"
 alias v="nvim"
@@ -95,20 +98,6 @@ alias config='/usr/bin/git --git-dir=/Users/neil/.dotfiles/ --work-tree=/Users/n
 export PATH="/usr/local/sbin:$PATH"
 [ -f "/Users/neil/.ghcup/env" ] && source "/Users/neil/.ghcup/env" # ghcup-env
 
-# Added by termtile (https://github.com/apaszke/termtile)
-alias ur='osascript ~/.termtile/tile.scpt up right'
-alias ul='osascript ~/.termtile/tile.scpt up left'
-alias dl='osascript ~/.termtile/tile.scpt down left'
-alias dr='osascript ~/.termtile/tile.scpt down right'
-alias ll='osascript ~/.termtile/tile.scpt left'
-alias rr='osascript ~/.termtile/tile.scpt right'
-alias up='osascript ~/.termtile/tile.scpt up'
-alias down='osascript ~/.termtile/tile.scpt down'
-alias big='osascript ~/.termtile/resize.scpt '
-alias cen='osascript ~/.termtile/center.scpt '
-alias max='osascript ~/.termtile/maximize.scpt '
-alias sn='osascript ~/.termtile/changeScreen.scpt next'
-alias fs='osascript ~/.termtile/fullscreen.scpt '
 alias del="trash"
 
 
@@ -143,21 +132,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 source $(brew --prefix nvm)/nvm.sh
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/neil/miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/neil/miniforge3/etc/profile.d/conda.sh" ]; then
-        . "/Users/neil/miniforge3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/neil/miniforge3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
 
 # Shell Integration
 source ~/.iterm2_shell_integration.zsh
