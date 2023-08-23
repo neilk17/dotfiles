@@ -9,4 +9,5 @@
 !skhd
 !nvim/**
 !.zshrc
-~sketchybar
+!sketchybar/**
+
