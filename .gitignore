@@ -5,6 +5,7 @@
 # Except
 !nvim-neil/**
 !LazyVim/**
+!NvChad/**
 !yabai
 !skhd
 !nvim/**
