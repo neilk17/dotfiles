@@ -74,10 +74,9 @@ export TERM="xterm-256color"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 alias lv="NVIM_APPNAME=LazyVim nvim"
-alias vn="NVIM_APPNAME=nvim-neil nvim"
-alias kv="NVIM_APPNAME=kickstart nvim"
-function nvims() {
-  items=("nvim-neil" "LazyVim" "kickstart")
+alias v="NVIM_APPNAME=kickstart nvim"
+function vs() {
+  items=("nvim" "LazyVim")
   config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
   if [[ -z $config ]]; then
     echo "Nothing selected"
@@ -92,7 +91,6 @@ bindkey -s ^a "vs\n"
 
 alias yabairc="nvim ~/.config/yabai/yabairc"
 alias skhdrc="nvim ~/.config/skhd/skhdrc"
-alias v="nvim"
 alias zsh="nvim ~/.zshrc"
 alias activate="source venv/bin/activate"
 alias config='/usr/bin/git --git-dir=/Users/neil/.dotfiles/ --work-tree=/Users/neil'
