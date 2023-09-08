@@ -142,3 +142,5 @@ export PNPM_HOME="/Users/neil/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 alias lg='lazygit'
+
+export NPM_TOKEN=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
