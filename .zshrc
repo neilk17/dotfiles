@@ -143,4 +143,11 @@ export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 alias lg='lazygit'
 
-export NPM_TOKEN=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
+export NPM_TOKEN=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
+
+# bun completions
+[ -s "/Users/neil/.bun/_bun" ] && source "/Users/neil/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
