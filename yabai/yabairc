@@ -53,6 +53,8 @@ yabai -m rule --add app="^Preview$" manage=off
 yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^FaceTime$" manage=off
 yabai -m rule --add app="^GIMP$" manage=off
+yabai -m rule --add app="^Raycast$" manage=off
+yabai -m rule --add app="^Messages$" manage=off
 
 echo "yabai configuration loaded."
 
