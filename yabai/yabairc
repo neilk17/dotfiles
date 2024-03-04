@@ -6,7 +6,7 @@ sudo yabai --load-sa
 #
 
 # global settings
-yabai -m config external_bar on            all:49:0          \
+yabai -m config external_bar on            all:32:0          \
                 window_placement           second_child       \
                 top_padding                2                 \
                 bottom_padding             2                 \

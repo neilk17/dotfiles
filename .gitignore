@@ -3,12 +3,13 @@
 **/.DS_Store
 
 # Except
-!nvim-neil/**
+!nvim/**
+!kickstart/**
 !LazyVim/**
 !NvChad/**
 !yabai
 !skhd
 !nvim/**
 !.zshrc
-!sketchybar/**
+!sketchybar
 
