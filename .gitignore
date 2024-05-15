@@ -12,4 +12,4 @@
 !nvim/**
 !.zshrc
 !sketchybar
-
+!.wezterm.lua
