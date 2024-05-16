@@ -8,7 +8,8 @@ for sid in "${SPACE_SIDS[@]}"; do
 		icon=$sid \
 		label.font="sketchybar-app-font:Regular:16.0" \
 		label.y_offset=-1 \
-		script="$PLUGIN_DIR/space.sh"
+		script="$PLUGIN_DIR/space.sh" \
+		background.corner_radius=5
 done
 
 sketchybar --add item space_separator left \

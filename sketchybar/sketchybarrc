@@ -28,9 +28,7 @@ sketchybar --default icon.font="SF Pro:Semibold:15.0" \
 	icon.padding_left=10 \
 	icon.padding_right=4
 
-##### Adding Mission Control Space Indicators #####
-#
-##### Adding Left It# -- Left Side Items --
+# -- Left Side Items --
 source $ITEM_DIR/spaces.sh
 source $ITEM_DIR/front_app.sh
 

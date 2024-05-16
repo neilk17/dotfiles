@@ -428,7 +428,6 @@ function icon_map() {
 		;;
 	esac
 }
-
 icon_map "$1"
 
 echo "$icon_result"
