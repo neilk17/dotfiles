@@ -1,12 +1,10 @@
 return {
-  { "rebelot/kanagawa.nvim" },
-  { "nyoom-engineering/oxocarbon.nvim" },
-  { "navarasu/onedark.nvim" },
-  -- Configure LazyVim to load
+
+  -- Configure LazyVim to load gruvbox
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "onedark",
+      colorscheme = "default",
     },
   },
 }

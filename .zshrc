@@ -17,7 +17,9 @@ alias ls="eza --icons=always" # better ls
 alias cd="z"
 
 
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=/usr/local/bin:$PATH
+export PATH="/usr/local/opt/neovim/bin:$PATH"
+
 
 # history setup
 HISTFILE=$HOME/.zhistory
@@ -34,4 +36,15 @@ setopt hist_verify
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/local/share/powerlevel10k/powerlevel10k.zsh-theme
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.nvm/nvm.sh
+export NVM_DIR="$HOME/.nvm"
+# source $(brew --prefix nvm)/nvm.sh
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+source $(brew --prefix nvm)/nvm.sh
+
+# pnpm
+export PNPM_HOME="/Users/neil/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
+# bun completions
+[ -s "/Users/neil/.bun/_bun" ] && source "/Users/neil/.bun/_bun"
