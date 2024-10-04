@@ -10,11 +10,12 @@ PROMPT='%~ %'
 # ---- Zoxide (better cd) ----
 eval "$(zoxide init zsh)"
 
-alias v="nvim"
+alias nv="nvim"
 alias kv="NVIM_APPNAME=kickstart nvim"
 alias lv="NVIM_APPNAME=LazyVim nvim"
 alias ls="eza --icons=always" # better ls
 alias cd="z"
+alias mutt="neomutt"
 
 
 export PATH=/usr/local/bin:$PATH

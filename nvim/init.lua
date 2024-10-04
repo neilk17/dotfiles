@@ -21,6 +21,12 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+-- Indentation settings
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
+vim.opt.softtabstop = 2
+
 -- Setup lazy.nvim
 require("lazy").setup({
 	spec = {
@@ -30,12 +36,12 @@ require("lazy").setup({
 			config = function()
 				require("zen-mode").setup({
 					window = {
-  width = 90,
-  options = {
-    number = false,
-    relativenumber = false,
-  }
-},
+						width = 90,
+						options = {
+							number = false,
+							relativenumber = false,
+						},
+					},
 				})
 				-- Key mapping to toggle Zen Mode
 				vim.keymap.set("n", "<leader>z", ":ZenMode<CR>", { silent = true })
