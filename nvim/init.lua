@@ -1,25 +1,4 @@
--- Bootstrap lazy.nvim
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not (vim.uv or vim.loop).fs_stat(lazypath) then
-	local lazyrepo = "https://github.com/folke/lazy.nvim.git"
-	local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
-	if vim.v.shell_error ~= 0 then
-		vim.api.nvim_echo({
-			{ "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-			{ out, "WarningMsg" },
-			{ "\nPress any key to exit..." },
-		}, true, {})
-		vim.fn.getchar()
-		os.exit(1)
-	end
-end
-vim.opt.rtp:prepend(lazypath)
-
--- Make sure to setup `mapleader` and `maplocalleader` before
--- loading lazy.nvim so that mappings are correct.
--- This is also a good place to setup other settings (vim.opt)
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
+require("config.lazy")
 
 -- Indentation settings
 vim.opt.tabstop = 2
@@ -50,7 +29,6 @@ require("lazy").setup({
 	},
 	-- Configure any other settings here. See the documentation for more details.
 	-- colorscheme that will be used when installing plugins.
-	install = { colorscheme = { "habamax" } },
 	-- automatically check for plugin updates
 	checker = { enabled = true },
 })
@@ -64,3 +42,9 @@ vim.wo.linebreak = true
 -- Use 'gj' and 'gk' for moving down and up by displayed lines
 vim.keymap.set("n", "j", "gj")
 vim.keymap.set("n", "k", "gk")
+
+local print_date = require('print_date')
+
+vim.api.nvim_create_user_command('PrintDate', print_date.print_today_date, {})
+
+vim.api.nvim_set_keymap('n', '<leader>d', ':PrintDate<CR>', {noremap=true, silent=true})
