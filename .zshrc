@@ -17,7 +17,6 @@ alias ls="eza --icons=always" # better ls
 alias cd="z"
 alias mutt="neomutt"
 
-
 export PATH=/usr/local/bin:$PATH
 export PATH="/usr/local/opt/neovim/bin:$PATH"
 
@@ -49,3 +48,7 @@ export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 # bun completions
 [ -s "/Users/neil/.bun/_bun" ] && source "/Users/neil/.bun/_bun"
+
+dayfile() {
+  nvim $(date +%Y-%m-%d).txt
+}
