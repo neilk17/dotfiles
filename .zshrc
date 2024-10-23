@@ -7,6 +7,9 @@ fi
 
 PROMPT='%~ %'
 
+# Vim mode
+bindkey -v
+
 # ---- Zoxide (better cd) ----
 eval "$(zoxide init zsh)"
 
@@ -49,6 +52,10 @@ export PATH="$PNPM_HOME:$PATH"
 # bun completions
 [ -s "/Users/neil/.bun/_bun" ] && source "/Users/neil/.bun/_bun"
 
+# dayfile() {
+#   nvim $(date +%Y-%m-%d).txt
+# }
 dayfile() {
-  nvim $(date +%Y-%m-%d).txt
+    local days=${1:-0}  # If no parameter is provided, default to 0 (today)
+    nvim $(date -v"+${days}d" +%Y-%m-%d).txt
 }

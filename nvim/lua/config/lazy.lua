@@ -24,17 +24,22 @@ vim.g.maplocalleader = "\\"
 require("lazy").setup({
 	"folke/which-key.nvim",
 	"folke/neoconf.nvim",
+	"nvim-lua/plenary.nvim",
+  {
+    'nvim-telescope/telescope.nvim', tag = '0.1.8',
+    dependencies = { 'nvim-lua/plenary.nvim' }
+  },
 	{
 		"folke/zen-mode.nvim",
-    opts={
-				window = {
-					width = 90,
-					options = {
-						number = false,
-						relativenumber = false,
-					},
+		opts = {
+			window = {
+				width = 90,
+				options = {
+					number = false,
+					relativenumber = false,
 				},
-    }
+			},
+		},
 	},
 	checker = { enabled = true },
 })
