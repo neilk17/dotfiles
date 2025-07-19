@@ -9,20 +9,28 @@ PROMPT='%~ %'
 
 # Vim mode
 bindkey -v
+bindkey '^P' up-history
+bindkey '^N' down-history
+bindkey '^R' history-incremental-search-backward
 
 # ---- Zoxide (better cd) ----
 eval "$(zoxide init zsh)"
 
-alias nv="nvim"
+alias vi="nvim"
 alias kv="NVIM_APPNAME=kickstart nvim"
 alias lv="NVIM_APPNAME=LazyVim nvim"
 alias ls="eza --icons=always" # better ls
 alias cd="z"
 alias mutt="neomutt"
+alias tag="node ~/writing/ai/index.js"
+alias findtag='grep "^tags:.*"'
+alias j="./journal.py --dir ."
 
 export PATH=/usr/local/bin:$PATH
 export PATH="/usr/local/opt/neovim/bin:$PATH"
 
+# Initialize autocompletion
+autoload -U compinit && compinit
 
 # history setup
 HISTFILE=$HOME/.zhistory
@@ -53,9 +61,20 @@ export PATH="$PNPM_HOME:$PATH"
 [ -s "/Users/neil/.bun/_bun" ] && source "/Users/neil/.bun/_bun"
 
 # dayfile() {
-#   nvim $(date +%Y-%m-%d).txt
+#     local days=${1:-0}  # If no parameter is provided, default to 0 (today)
+#     local datestr=$(date -v"+${days}d" +%Y-%m-%d)
+#     local filename="${datestr}.txt"
+#
+#     # Check if file exists
+#     if [ ! -f "$filename" ]; then
+#         # Create the file and add the date only if it doesn't exist
+#         touch "$filename"
+#         echo "date: $datestr" > "$filename"
+#     fi
+#
+#     # Open with nvim
+#     nvim "$filename"
 # }
-dayfile() {
-    local days=${1:-0}  # If no parameter is provided, default to 0 (today)
-    nvim $(date -v"+${days}d" +%Y-%m-%d).txt
-}
+
+# Added by Windsurf
+export PATH="/Users/neil/.codeium/windsurf/bin:$PATH"

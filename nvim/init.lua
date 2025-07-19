@@ -12,6 +12,13 @@ vim.wo.wrap = true
 -- Set wrap options to wrap at words
 vim.wo.linebreak = true
 
+-- Auto-enable ZenMode on startup
+vim.api.nvim_create_autocmd("VimEnter", {
+  callback = function()
+    vim.cmd("ZenMode")
+  end,
+})
+
 -- Setup custom print date function
 function print_today_date()
 	local date = os.date("date: %Y-%m-%d")
