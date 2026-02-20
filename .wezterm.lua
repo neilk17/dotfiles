@@ -23,7 +23,11 @@ config.tab_bar_at_bottom = true
 config.tab_max_width = 20
 
 config.window_decorations = "RESIZE"
-config.window_background_opacity = 0.75
+config.window_background_opacity = 0.9
 config.macos_window_background_blur = 20
+
+config.keys = {
+  {key="Enter", mods="SHIFT", action=wezterm.action{SendString="\x1b\r"}},
+}
 
 return config
